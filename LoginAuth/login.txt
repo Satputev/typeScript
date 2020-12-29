@@ -1,0 +1,142 @@
+Login Authentication By Using MySQL DataBase
+--------------------------------------------
+1) install the MySQL DataBase
+
+Ex.
+    mysql-essential-5.2.3-falcon-alpha-win32.msi
+
+
+2) create the table in MySQL DataBase
+
+Default Password : root
+
+> create scheme workshop;
+    - automatically "workshop" database will be create.
+
+> use workshop;
+    - we can switch to workshop database.
+
+> create table login_details(uname varchar(20),
+                             upwd varchar(20));
+
+    - "login_details" table will create.
+
+> insert into login_details values("admin","admin");
+
+    - we can insert the record into login_details table.
+
+> select * from login_details;
+
+    - we can fetch the data from login_details table.
+
+
+*********************************
+host    :   localhost
+
+user    :   root
+
+password:   root
+
+database:   workshop
+
+table   :   login_details
+**********************************
+
+
+3) download the following node modules
+
+    => express
+
+    => mysql
+
+    => cors
+
+    => body-parser
+
+    => jwt-simple
+
+    - "express" module used to develop the rest apis.
+
+    - "mysql" module used to interact with the mysql database
+
+    - "body-parser" module used to read the post parmeters coming from client application.
+
+    - "cors" module used to enable the ports communication.
+
+    - "jwt-simple" module used to generate the tokens.
+
+> yarn add express 
+           mysql 
+           cors 
+           body-parser 
+           jwt-simple --save
+
+
+4) develop the Rest API by using NodeJS
+
+
+*******************************
+LoginAuth
+       config
+          db_properties.js
+          db_connection.js
+          generate_token.js
+
+       login
+          login.js
+
+       server.js
+********************************       
+
+
+5) start the node server
+
+    > node server
+
+6) test the rest api by using Postman
+
+    => http://localhost:8080/login   (POST)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

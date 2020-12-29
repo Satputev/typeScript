@@ -1,0 +1,176 @@
+<!--Json stands for javascript object notation
+-Json also called ad javascript object
+-JSON used to transfer the data over network
+-JSON is network friendly format
+-parsing of json is easy campare to xml
+-json is lightweight compare to xml
+
+
+syntax:--
+object ---{}
+arrays...[]
+data....key and value pairs
+key and value seperated by using ':'
+key value pairs seperated by using ','
+
+-->
+
+
+<!--
+<!doctype html>
+<html>
+<script>
+let obj={
+sub_one:"Angular",
+sub_two:"Nodejs",
+sub_three:"Mongodb"
+};
+
+console.log(obj.sub_one,obj.sub_two,obj.sub_three);
+
+</script>
+
+
+</html>
+-->
+<!--
+<!doctype html>
+<html>
+<script>
+let obj={
+	key_one:"Angular",
+	key_two:"Nodejs",
+	key_three:"mongodb"
+};
+for(let k in obj){
+	console.log(k);//key_one key_two key_three
+	console.log(obj[k]);//Angilar Nodejs mongodb
+	console.log(typeof(k))//string string string
+};
+</script>
+</html>
+-->
+
+<!--
+<!doctype html>
+<html>
+<script>
+let obj={
+	login:login
+};
+
+function login(){
+	return "welcome to login module"
+};
+console.log(obj.login());//welcome to login module
+console.log(obj.login);//function hole body
+</script>
+</html>
+-->
+
+<!--
+<!doctype html>
+<html>
+<script>
+let obj={
+mean:mean
+
+};
+function mean(){
+return "mean stack";
+};
+
+console.log(obj.mean);//function body
+console.log(obj.mean());//mean stack
+
+</script>
+</html>
+-->
+
+<!--
+<!doctype html>
+<html>
+<script>
+let obj={
+	MongoDB:()=>{
+		return "mongodb soon..."
+	}
+};
+console.log(obj.MongoDB);//function defination 
+console.log(obj.MongoDB());//mongodb soon
+
+</script>
+</html>
+-->
+
+<!--
+<!doctype html>
+<html>
+<script>
+
+let products=[{p_id:111,p_name:"p_one",p_cost:10000},
+{p_id:222,p_name:"p_two",p_cost:20000},
+{p_id:333,p_name:"p_three",p_cost:30000},
+{p_id:444,p_name:"p_four",p_cost:40000},
+{p_id:555,p_name:"p_five",p_cost:50000}
+];
+
+document.write(`<table border="1"
+cellpadding="10px"
+cellspacing="10px"
+align="center">
+<thead>
+<tr>
+<th>SNO</th>
+<th>ID</th>
+<th>NAME</th>
+<th>COST</th>
+</tr>
+</thead>
+<tbody>`
+);
+products.forEach((obj,index)=>{
+document.write(`
+<tr>
+<th>${index+1}</th>
+<th>${obj.p_id}</th>
+<th>${obj.p_name}</th>
+<th>${obj.p_cost}</th>
+</tr>
+`)
+});
+document.write(`</tbody></table>`);
+</script>
+
+
+</html>
+-->
+<!--
+<!doctype html>
+<html>
+<script src="b_end.js"></script>
+<script>
+let obj={
+	f_end:[{sub:"Angular"}],
+	server:{
+		middleware:[{sub:"Nodejs"}]
+	},
+	b_end:b_end()
+};
+console.log(obj.f_end[0].sub,obj.server.middleware[0].sub,obj.b_end.latest[0].sub);
+</script>
+
+</html>
+-->
+<!doctype html>
+<html>
+<script>
+let myfun=()=>{
+	return{
+		img:"https://restcountries.ed/data/bmusvg"
+	}
+};
+document.write(`<img width="200px" height="100px src="${myfun().img}">`);
+
+</script>
+</html>

@@ -1,0 +1,418 @@
+NodeJS
+------
+    - NodeJS is the server side scripting language.
+
+    - NodeJS used to develop the servers.
+
+                Http server
+                TCP server
+
+    - we will develop Node Applications by using JavaScript.
+
+    - Node Supports the libraries  (predefined & custom)
+
+libraries in NodeJS (Modules)
+-----------------------------
+
+1) mysql
+    - this Module used to interact with the mysql database
+
+2) mongodb
+    - this Module used to interact with the mongodb database.
+
+    - stable version of mongodb module is "2.2.32"
+
+3) mssql
+    - this module used to interact with the SQLServer.
+
+
+4) oracledb
+    - this module used to intearct with the oracle database.
+
+
+5) express
+    - express module used to develop the web services.
+
+    - web services also called as rest apis
+
+    - providing the communication between different technologies called as webservices.
+
+
+6) body-parser
+
+    - this module used to read the data coming from client.  (post req data)
+
+
+7) cors
+
+    - this module used to enable the ports communicaton.
+
+
+8) jwt-simple
+
+    - "jwt" stands for json web token.
+
+    - this module used to generate the tokens.
+
+    - these tokens for authentication purpose.
+
+    - this authentication system called as "token based authentication" system.
+
+
+9) multer
+
+    - this module used to upload the images to the server.
+
+10) socket.io
+
+    - this module used to develop the chat Applications.
+
+
+11) http
+    - this module used to develop the http servers.
+
+
+12) fs
+    - "fs" stands for file system.
+
+    - this module used to interact with the flat files.
+
+
+13) mongoose
+
+    - "mongoose" module used to intearct with the mongodb database with rules and regulations.
+
+    - rules & regulations called as "schema"
+
+    - whereas "mongodb@2.2.32" module won't follows any rules and regulations.
+
+
+14) url
+
+    - this module used to read the get parameters in http servers.
+
+
+Environmental Setup for Node Applications
+-----------------------------------------
+
+1) download and install NodeJS
+
+    website : https://nodejs.org/en/download/
+
+    file    : node-v12.14.0-x64.msi
+
+
+
+2) install "yarn" tool
+
+    - "yarn" tool given by facebook.
+
+    - "yarn" tool, used to download the libraries (node modules)
+
+    - modules will be downloads to "node_modules" folder in current path.
+
+    - we will install "yarn" tool by using following command.
+
+    > npm install -g yarn@latest
+
+    - "npm" stands for node packaging manager.
+
+    - "npm" is the integrated tool of node js.
+
+    - "-g" stands for global installation.
+
+
+3) install "nodemon" tool
+
+    - "nodemon" tool used to start the server in live/watch mode.
+
+    - we will install "nodemon" tool by using following command.
+
+    > npm install -g nodemon@latest
+
+
+downloading the libraries by using yarn tool
+--------------------------------------------
+
+> yarn add express mongodb@2.2.32 ....... --save
+
+    - automatically above modules downloads to "node_modules" folder in current path.
+
+
+start the node server
+---------------------
+
+    > node server        (no live mode/no watch mode)
+        (or)
+    > nodemon server     (watch mode / live mode)
+
+
+                **** MongoDB ****
+
+    - "MongoDB" is the NoSQL DataBase.
+
+    - "MongoDB" won't supports the "sql & plsql" queries.
+
+    - "MongoDB" supports the JSON.
+
+    - As a MongoDB Developer,we can perform CRUD Operations on JSON.
+
+    - "MongoDB" database is the ligth weigth database.
+
+    - "MongoDB" database follows "client server" architecture.
+
+    - "MongoDB" database follows "mongodb" protocol.
+
+    - "mongodb" protocol developed by "MongoDB" Database and it's own protocol.
+
+    - "MongoDB" by default running on port no.27017
+
+
+installation of mongodb database
+--------------------------------
+
+1) download and install mongodb database.
+
+website : https://www.mongodb.com/download-center/community
+
+file    : mongodb-win32-x86_64-2012plus-4.2.2-signed.msi
+
+
+2) create the following "empty directory structure".
+
+    c:/data/db
+
+    - above directory structure used to maintain the data backup
+
+
+3) set the path Environmental variable
+
+    path = C:\Program Files\MongoDB\Server\4.2\bin
+
+
+MongoDB Queries
+---------------
+
+> mongod
+
+    - it is used to start the mongo server.
+
+    - by default server starts on port no 27017
+
+
+> mongo
+
+    - it is used to connect to server.
+
+
+3) show dbs
+
+    - it will show available databases in mongodb.
+
+
+4) use workshop;
+
+    - "workshop" database will be created and switches also.
+
+5) db.createCollection("products");
+
+    - automatically "products" collection will be created.
+
+6) db.products.insert({p_id:111,
+                       p_name:'p_one',
+                       p_cost:10000});
+
+    - automatically record (JSON Object) will be inserted into "products" collection in "workshop" Database.
+
+7) db.products.find()
+
+    - we can fetch the data from "products" collection.
+
+8) db.dropDatabase();
+
+    - current database will be drop.
+
+************************************
+host    :   localhost
+
+protocol:   mongodb
+
+port    :   27017
+
+database :  workshop
+
+collection : products
+***********************************
+
+
+CRUD Operations
+---------------
+
+1) create the directory.
+
+Ex.
+    NodeJS
+
+
+2) download the node modules
+
+    => express
+
+    => mongodb@2.2.32
+
+    => cors
+
+    => body-parser
+
+    > yarn add express mongodb@2.2.32 cors body-parser --save
+
+
+3) develop the rest apis by using Node.
+
+******************************
+NodeJS
+    fetch
+       fetch.js
+    insert  
+       insert.js
+    update
+       update.js
+    delete
+       delete.js
+    server.js
+*****************************
+
+    - "fetch.js" file used to fetch the data from "products" collection.
+
+    - "insert.js" file used to insert the data in "products" collection.
+
+    - "update.js" file used to update the data in products collection.
+
+    - "delete.js" file used to delete the data from products collection.
+
+    - "server.js" file is the main server file.
+
+    - Node Starts the execution from server.js file.
+
+
+4) start the servers
+
+    > mongod
+
+    > mongo
+
+    > nodemon server
+
+
+5) Test the following rest apis by using Postman
+
+    => http://localhost:8080/fetch   (GET)
+
+    => http://localhost:8080/insert  (POST)
+
+    => http://localhost:8080/update  (PUT)
+
+    => http://localhost:8080/delete  (DELETE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+

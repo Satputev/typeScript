@@ -1,0 +1,61 @@
+<!-- In server we may have multipe number of requests
+all requests are processes are independently without affecting any other request called as asynchronous call
+-we wii make ajax call using jquery
+-we will include jquery library by using folloind CDN(address of jquery)
+url:https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<p id="my_div"></p>
+<script>
+$.ajax({
+url:"https://reqres.in/api/users?page=2",
+method:"GET",
+success:(res)=>{
+	//console.log(res);
+
+document.write(`<table border="1" cellpadding="10px" cellspacing="10px" align="center">
+<thead>
+<tr>
+<th>SNO</th>
+<th>ID</th>
+<th>FIRST_NAME</th>
+<th>LAST_NAME</th>
+<th>EMAIL</th>
+<th>AVTAR</th>
+
+
+</tr>
+</thead>
+<tbody>
+`);
+res.data.forEach((element,index)=>{
+document.write(`
+<tr>
+<td>${index+1}</td>
+<td>${element.id}</td>
+<td>${element.first_name}</td>
+<td>${element.last_name}</td>
+<td>${element.email}</td>
+<td><img width="100px" height="50px" src="${element.avatar}"></td>
+</tr>
+`)
+});
+
+
+//	$("#my_div").append(JSON.stringify(res));
+},
+error:(err)=>{
+	console.log(err)
+}
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!--POST request.....
+- POST URL:http://test-routes.herokuapp.com/test/uppercase
+- the above rest api url representing post request
+- above rest api url accepting the json object as requested data 
+- json object contain following key
+@message
+-->
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+<script>
+$.ajax({
+	url:"http://test-routes.herokuapp.com/test/uppercase",
+	method:"POST",
+	data:{"message":"hello"},
+success:(posRes)=>{
+				console.log(posRes);
+									},
+
+error:(err)=>{
+	console.log(err);
+}
+});
+
+
+</script>
+</body>
+</html>
+-->
+
+
+
+
+
+
+
+<!--promises...
+- Promise is a javascript object
+- promises establishes the communation between consumer and producer
+-promises has following states
+...1>resolve(success)
+...2>reject(failuare)
+
+-we will create promises by using "Promise" class object
+-we will consume promises by using "then()"
+-->
+<!--
+<!DOCTYPE html>
+<html>
+<script>
+let my_promise=new Promise((resolve,reject)=>{
+    resolve("Tommorow we will discuss oops");
+});
+my_promise.then((posRes)=>{
+console.log(posRes);
+},(errRes)=>{
+console.log(errRes);
+});
+
+</script>
+</html>
+-->
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<script>
+let my_promise1=new Promise((resolve,reject)=>{
+	setTimeout(()=>{
+resolve("hello1");
+	},0);
+});
+
+let my_promise2=new Promise((resolve,reject)=>{
+setTimeout(()=>{
+resolve("hello2");
+},5000);
+});
+
+let  my_promise3=new Promise((resolve,reject)=>{
+setTimeout(()=>{
+resolve("hello3");
+},10000);
+});
+/*
+my_promise1.then((posRes)=>{
+console.log(posRes);
+},(errRes)=>{
+console.log(errRes);
+});
+my_promise2.then((posRes)=>{
+console.log(posRes);
+},(errRes)=>{
+console.log(errRes);
+});
+
+my_promise3.then((posRes)=>{
+	console.log(posRes);
+},(errRes)=>{
+	console.log(errRes);
+});
+
+//-helllo1 immeadiatly
+//-hello2 after 5 sec
+//-hello3 after 10 sec
+*/
+//consuming all promises
+Promise.all([my_promise1,my_promise2,my_promise3]).then((posRes)=>{
+	console.log(posRes[0],posRes[1],posRes[2]);
+},(errRes)=>{
+	console.log(errRes);
+});
+//result will be produced after maximum timeout
+</script>
+
+</html>
+-->
+
+
+
+
+
+<!--
+async and await
+- sync and await are used to consume the promises
+-by using async and await application readability will be increasd
+-with the help of async and await performance will be increased
+-its reccomended to use async and await
+
+-->
+<!--
+<!DOCTYPE html>
+<html>
+<script>
+function fun_one(){
+	return new Promise((resolve,reject)=>{
+resolve("hello");
+	});
+};
+
+async function fun_two(){
+	let res=await fun_one();
+	console.log(res);
+};
+fun_two();
+
+</script>
+</html>
+-->
+<!--combination of ajax,promises,async and await
+    URL : https://www.w3schools.com/angular/customers.php
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+<script>
+function fun_one(){
+	return new Promise((resolve,reject)=>{
+$.ajax({
+url:"https://www.w3schools.com/angular/customers.php",
+method:"GET",
+success:(posRes)=>{
+			resolve(posRes);
+			},
+error:(errRes)=>{
+	reject(errRes);
+}
+});
+	});
+};
+
+async function fun_two(){
+	let res=await fun_one();
+	console.log(res);
+}
+
+fun_two();
+</script>
+
+
+
+</body>
+
+</html>
+
